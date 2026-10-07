@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&family=Shippori+Mincho:wght@400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-butai-dark: #120a06;
+  --color-butai-wood: #2c1810;
+  --color-butai-light: #523122;
+  --color-brass: #d4af37;
+  --color-vermilion: #c83c23;
+  --color-paper: #fcf8ee;
+}
+
+body {
+  background-color: #0b0604;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(120, 53, 15, 0.15) 0%, transparent 70%),
+    radial-gradient(circle at 100% 100%, rgba(200, 60, 35, 0.08) 0%, transparent 50%),
+    linear-gradient(to bottom, #0d0705, #080403);
+  color: #f3e8dc;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom Serif Typography */
+.font-serif {
+  font-family: 'Cinzel', 'Shippori Mincho', 'Noto Serif Devanagari', Georgia, serif;
+}
+
+/* Authentic Japanese Wooden Butai Stage Frame */
+.butai-frame {
+  border: 14px solid #23120b;
+  border-image: linear-gradient(135deg, #3d2013 0%, #1c0e08 50%, #3d2013 100%) 1;
+  box-shadow: 
+    0 30px 60px -15px rgba(0, 0, 0, 0.9),
+    0 0 120px rgba(0, 0, 0, 0.8) inset,
+    0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+.butai-wood-grain {
+  background-color: #24140d;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0),
+    linear-gradient(90deg, rgba(0,0,0,0.4) 0%, rgba(255,255,255,0.04) 25%, rgba(0,0,0,0.5) 50%, rgba(255,255,255,0.03) 75%, rgba(0,0,0,0.4) 100%),
+    linear-gradient(to bottom, #2b170f, #1a0c07);
+  background-size: 24px 24px, 100% 100%, 100% 100%;
+}
+
+/* Ornamental Brass Corner Brackets */
+.brass-bracket {
+  background: linear-gradient(135deg, #f7e089 0%, #d4af37 40%, #aa8210 70%, #684f07 100%);
+  border: 1px solid #ffe89e;
+  box-shadow: 
+    inset 0 1px 2px rgba(255, 255, 255, 0.8),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.6),
+    0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Traditional Washi Paper Texture */
+.washi-paper {
+  background-color: #17100a;
+  background-image: 
+    radial-gradient(rgba(240, 220, 190, 0.04) 1px, transparent 0),
+    linear-gradient(to bottom, #1d120a, #130a06);
+}
+
+/* Kamishibai Card Slide Animations */
+.kamishibai-card {
+  transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
+  will-change: transform;
+}
+
+.card-current {
+  transform: translateX(0);
+}
+
+.card-slide-out-right {
+  transform: translateX(110%);
+  box-shadow: -20px 0 35px rgba(0, 0, 0, 0.8);
+}
+
+.card-nukikata-half {
+  transform: translateX(45%);
+  box-shadow: -15px 0 25px rgba(0, 0, 0, 0.7);
+}
+
+.card-next-underneath {
+  transform: scale(0.99);
+  filter: brightness(0.92);
+}
+
+/* Stage Folding Doors (Tobira) */
+.stage-doors-overlay {
+  perspective: 1200px;
+  transition: opacity 0.6s ease;
+  z-index: 30;
+}
+
+.stage-door-left {
+  transform-origin: left center;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.stage-door-right {
+  transform-origin: right center;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.doors-open .stage-door-left {
+  transform: rotateY(-110deg);
+  opacity: 0.15;
+}
+
+.doors-open .stage-door-right {
+  transform: rotateY(110deg);
+  opacity: 0.15;
+}
+
+.doors-closed .stage-door-left {
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+
+.doors-closed .stage-door-right {
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #120906;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3d2116;
+  border-radius: 4px;
+  border: 1px solid #5a3221;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6e3c28;
+}
